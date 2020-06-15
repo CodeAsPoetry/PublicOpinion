@@ -6,7 +6,7 @@ tags: lemon
 mathjax: true
 ---
 
-![image](easter_eggs/heartbeat.jpeg)
+![image](heartbeat.jpeg)
 
 <center>姑苏有佳丽，绝世而独立，一顾倾人城，再顾倾人国</center>
 
