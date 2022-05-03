@@ -18,9 +18,9 @@ APP 爬虫原理图
 
 ## 1. APP 爬虫环境和工具搭建
 
-* 由于这几个工具较大，且都和系统环境打交道，安装过程且稍微有些故障，again 就各种报错，为了一步到位，建议留 10 个G以上的磁盘空间，本人 Mac 开发机，磁盘不大够，腾磁盘空间时，发现“其他”类型占了接近 40 G，推荐一个工具 OmniDiskSweeper，确定其中系统备份占用 20 个 G，删掉它，删掉教程：https://blog.csdn.net/kaixinjiaoluo/article/details/124521994,  mac 开机长按 Command + R，出现白条松开，进入恢复模式，打开终端，执行 csrutil disable ，关闭系统完整性保护(SIP)，重启 reboot。注意，关闭之后最后不要再开，否则后边夜神模拟器会卡在 99% 起不来。
+* 由于这几个工具较大，且都和系统环境打交道，安装过程且稍微有些故障，again 就各种报错，为了一步到位，建议留 10 个G以上的磁盘空间，本人 Mac 开发机，磁盘不大够，腾磁盘空间时，发现“其他”类型占了接近 40 G，推荐一个工具 OmniDiskSweeper，确定其中系统备份占用 20 个 G，删掉它，删掉教程：https://blog.csdn.net/kaixinjiaoluo/article/details/124521994    mac 开机长按 Command + R，出现白条松开，进入恢复模式，打开终端，执行 csrutil disable ，关闭系统完整性保护(SIP)，重启 reboot。注意，关闭之后最后不要再开，否则后边夜神模拟器会卡在 99% 起不来。
 
-* 下载安装夜神模拟器 (Android)，启动模拟器，发现其 Android 版本为 7.1.2，顺手开启 USB 调试，如果没有这个开关，点击版本号5次开启，教程 https://blog.csdn.net/weixin_38801014/article/details/122983109， 夜神模拟器，Mac 下有个毛病，就是卡在 99% 不动，网上给出的一大堆原因都无法拯救我，后来发现没有正常退出或者删了重装都会很大概率出现，猜测是缓存机制，于是每次重装前，都要到 /Users/xxx/Library/Application\ Support/ 下边把 NoxAppPlayer 和 NoxInstaller 连根拔掉
+* 下载安装夜神模拟器 (Android)，启动模拟器，发现其 Android 版本为 7.1.2，顺手开启 USB 调试，如果没有这个开关，点击版本号5次开启，教程 https://blog.csdn.net/weixin_38801014/article/details/122983109   夜神模拟器，Mac 下有个毛病，就是卡在 99% 不动，网上给出的一大堆原因都无法拯救我，后来发现没有正常退出或者删了重装都会很大概率出现，猜测是缓存机制，于是每次重装前，都要到 /Users/xxx/Library/Application\ Support/ 下边把 NoxAppPlayer 和 NoxInstaller 连根拔掉
 
 * 安装 Android Studio，通过 Android Studio 下载 Android SDK 7.0/7.1.1 ，vim .bash_profile 配置环境变量，教程 https://blog.csdn.net/weixin_41271167/article/details/122253261
 
@@ -30,14 +30,14 @@ APP 爬虫原理图
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   ```
 
-* 下载安装 Appium Server GUI (https://github.com/appium/appium-desktop) 和 Appium Inspector (https://github.com/appium/appium-inspector)， 启动 Appium Server GUI 时，编辑配置 ANDROID_HOME 和 JAVA_HOME，ANDROID_HOME上述已配置，拷贝下来，mac 已安装 Java 的查看安装路径，教程 https://blog.csdn.net/weixin_42566557/article/details/124377206， 没安装 Java 的，自行安装(应在安装 Android Studio 前就先行安装 Java)
+* 下载安装 Appium Server GUI (https://github.com/appium/appium-desktop) 和 Appium Inspector (https://github.com/appium/appium-inspector)， 启动 Appium Server GUI 时，编辑配置 ANDROID_HOME 和 JAVA_HOME，ANDROID_HOME上述已配置，拷贝下来，mac 已安装 Java 的查看安装路径，教程 https://blog.csdn.net/weixin_42566557/article/details/12437720   没安装 Java 的，自行安装(应在安装 Android Studio 前就先行安装 Java)
 
   ```bash
   cd /usr/libexec
   ./java_home
   ```
 
-* Mac 安装Appium Inspector 后(移动到 Applications 目录)前，执行 xattr -cr "/Applications/Appium Inspector.app"，启动报脚本错误，则执行 codesign --deep --sign - /Applications/Appium\ Inspector.app ，教程：https://github.com/appium/appium-desktop#installing-on-macos，  重启打开后， Remote Path 配置 /wd/hub，新建会话的四个参数 platformName，appium:deviceName，appium:appPackage， appium:appActivity ，参数值的获取需要 adb 工具，mac 安装 adb 教程：https://www.jianshu.com/p/744fc5946627， 推荐 brew 安装，如果慢的话，换个镜像，亲测不换镜像也挺快的。
+* Mac 安装Appium Inspector 后(移动到 Applications 目录)前，执行 xattr -cr "/Applications/Appium Inspector.app"，启动报脚本错误，则执行 codesign --deep --sign - /Applications/Appium\ Inspector.app ，教程：https://github.com/appium/appium-desktop#installing-on-macos    重启打开后， Remote Path 配置 /wd/hub，新建会话的四个参数 platformName，appium:deviceName，appium:appPackage， appium:appActivity ，参数值的获取需要 adb 工具，mac 安装 adb 教程：https://www.jianshu.com/p/744fc5946627   推荐 brew 安装，如果慢的话，换个镜像，亲测不换镜像也挺快的。
 
   执行：
 
@@ -52,7 +52,7 @@ APP 爬虫原理图
   # SM_N950N
   ```
 
-  然后在夜神模拟器上打开目标 APP，执行 adb shell dumpsys window ，找到 mCurrentFocus 对应的信息，确定 appium:appPackage 和 appium:appActivity 参数值，教程： https://blog.csdn.net/wo26466/article/details/118489930 ，以下例子是微信入口：
+  然后在夜神模拟器上打开目标 APP，执行 adb shell dumpsys window ，找到 mCurrentFocus 对应的信息，确定 appium:appPackage 和 appium:appActivity 参数值，教程： https://blog.csdn.net/wo26466/article/details/118489930   以下例子是微信入口：
 
   ```json
   {
@@ -63,7 +63,7 @@ APP 爬虫原理图
   }
   ```
 
-* 安装 mitmproxy ，直接 pip install ，自动会将 mitmdump + mitmweb 全部安装好，为夜神模拟器添加 Mitmproxy 证书，教程： https://blog.csdn.net/u010132177/article/details/117199579， 不添加证书，夜神模拟器浏览器提醒无证书，无法使用。
+* 安装 mitmproxy ，直接 pip install ，自动会将 mitmdump + mitmweb 全部安装好，为夜神模拟器添加 Mitmproxy 证书，教程： https://blog.csdn.net/u010132177/article/details/117199579    不添加证书，夜神模拟器浏览器提醒无证书，无法使用。
 
   ```bash
   adb devices -l #显示所有已连接的设备详细信息：127.0.0.1：62001
