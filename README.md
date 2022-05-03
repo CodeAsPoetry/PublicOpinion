@@ -26,7 +26,16 @@
 目前获取网络舆情的主要技术方法，还是通过爬虫获取，包括网站爬虫、APP爬虫。最近各种隐私数据保护政策的落地，以及公司对数据资产的重视，爬虫和反爬技术愈演愈烈，小爬怡情，大爬伤身，强爬灰飞烟灭。
 
 * Web 爬虫
+  * 编写 Python 脚本
+  * 依赖：Requests，BeatifulSoap，Selenium、ChromeDriver (Chrome官方驱动)
+  * 推荐 Scrapy 框架
+  * 开源项目：https://github.com/facert/awesome-spider
 * APP 爬虫
+  * Java 环境 + Android 环境 (sdk) 
+  * 夜神模拟器
+  * Appium (Appium Server GUI + Appium Inspector) + mitmproxy (mitmdump + mitmweb) + mongodb
+  * 编写 Python 脚本
+  * [搭建教程 + Demo 教程](https://)
 
 ### 2.2 舆情数据分析
 
