@@ -6,7 +6,7 @@
 
 APP 爬虫原理图
 
-![APP 爬虫原理](./images/app_scrapy_steam.png)
+![APP 爬虫原理](https://github.com/CodeAsPoetry/PublicOpinion/blob/master/images/app_scrapy_steam.png)
 
 代替人滑动、点击等操作，来驱动模拟器，类似 web 爬虫的 selenium，是 appium，其中 Appium Server GUI 是提供图形化界面的服务器，Appium Inspector 便于用户分析 APP 页面元素和操作步骤，和 Appium Server GUI  建立会话，下达驱动指令的
 
