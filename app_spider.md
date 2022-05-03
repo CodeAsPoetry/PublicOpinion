@@ -37,7 +37,7 @@ APP 爬虫原理图
   ./java_home
   ```
 
-* Mac 安装Appium Inspector 后(移动到 Applications 目录)前，执行 xattr -cr "/Applications/Appium Inspector.app"，启动报脚本错误，则执行 codesign --deep --sign - /Applications/Appium\ Inspector.app ，教程：https://github.com/appium/appium-desktop#installing-on-macos，重启打开后， Remote Path 配置 /wd/hub，新建会话的四个参数 platformName，appium:deviceName，appium:appPackage， appium:appActivity ，参数值的获取需要 adb 工具，mac 安装 adb 教程：https://www.jianshu.com/p/744fc5946627， 推荐 brew 安装，如果慢的话，换个镜像，亲测不换镜像也挺快的。
+* Mac 安装Appium Inspector 后(移动到 Applications 目录)前，执行 xattr -cr "/Applications/Appium Inspector.app"，启动报脚本错误，则执行 codesign --deep --sign - /Applications/Appium\ Inspector.app ，教程：https://github.com/appium/appium-desktop#installing-on-macos，  重启打开后， Remote Path 配置 /wd/hub，新建会话的四个参数 platformName，appium:deviceName，appium:appPackage， appium:appActivity ，参数值的获取需要 adb 工具，mac 安装 adb 教程：https://www.jianshu.com/p/744fc5946627， 推荐 brew 安装，如果慢的话，换个镜像，亲测不换镜像也挺快的。
 
   执行：
 
