@@ -35,7 +35,7 @@
   * 夜神模拟器
   * Appium (Appium Server GUI + Appium Inspector) + mitmproxy (mitmdump + mitmweb) + mongodb
   * 编写 Python 脚本
-  * [搭建教程 + Demo 教程](https://)
+  * [搭建教程 + Demo 教程](https://github.com/CodeAsPoetry/PublicOpinion/blob/master/app_spider.md)
 
 ### 2.2 舆情数据分析
 
