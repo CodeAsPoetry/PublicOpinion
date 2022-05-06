@@ -87,7 +87,21 @@
 
 ### 4.1 网络舆情爬取
 
+此项目主要是尽快重构项目，大同整个过程流程，所以数据获取的爬取脚本等工作暂先略去，待到后续进行补充，暂先用之前抓取得到的数据，包括
+
+* 正面情绪 60000 条微博评论：https://github.com/CodeAsPoetry/PublicOpinion/blob/master/data/%E8%AF%AD%E6%96%99/PaperDataSet/pos60000.txt
+* 负面情绪 60000 条微博评论：https://github.com/CodeAsPoetry/PublicOpinion/blob/master/data/%E8%AF%AD%E6%96%99/PaperDataSet/neg60000.txt
+* 抓取搜狐新闻评论：https://github.com/CodeAsPoetry/PublicOpinion/tree/master/data/%E8%AF%AD%E6%96%99/NativeCorpus
+
 ### 4.2 舆情数据清洗及统计分析
+
+#### 4.2.1 微博数据清洗及统计分析
+
+
+
+#### 4.2.2 搜狐新闻评论数据清洗及统计分析
+
+
 
 ### 4.3 Baseline 模型
 
