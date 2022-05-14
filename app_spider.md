@@ -63,7 +63,7 @@ APP 爬虫原理图
   }
   ```
 
-* 安装 mitmproxy ，直接 pip install ，自动会将 mitmdump + mitmweb 全部安装好，为夜神模拟器添加 Mitmproxy 证书，教程： https://blog.csdn.net/u010132177/article/details/117199579    不添加证书，夜神模拟器浏览器提醒无证书，无法使用。
+* 安装 mitmproxy ，直接 pip install ，自动会将 mitmdump + mitmweb 全部安装好，再添加 Mitmproxy 证书，教程： https://blog.csdn.net/u010132177/article/details/117199579    不添加证书，夜神模拟器浏览器提醒无证书，无法使用。
 
   ```bash
   adb devices -l #显示所有已连接的设备详细信息：127.0.0.1：62001
@@ -98,7 +98,7 @@ APP 爬虫原理图
   chmod 644 /system/etc/security/cacerts/c8750f0d.0
   ```
 
-  * 上述流程走完，Appium Inspector 建立的会话已经通过 Appium Server GUI 将夜游模拟器连接上了，还需将 Mitmproxy 和也神模拟器连接，执行 ifconfig ，获取 Mac 电脑的局域网 IP，即 192.168.x.x 开头，将夜神模拟器配置代理为此 IP，这样，所以通过手机的网络请求和返回的数据都通过 Mitmproxy，Mitmproxy 提供 Python 接口供发送网络请求、接收返回数据、存入数据库中。
+  * 上述流程走完，Appium Inspector 建立的会话已经通过 Appium Server GUI 将夜游模拟器连接上了，还需将 Mitmproxy 和也神模拟器连接，执行 ifconfig ，获取 Mac 电脑的局域网 IP，即 192.168.x.x 开头，将夜神模拟器配置代理为此 IP，教程： https://jingyan.baidu.com/article/36d6ed1f560efe5acf48838d.html  。这样，所以通过手机的网络请求和返回的数据都通过 Mitmproxy，Mitmproxy 同时提供 Python 接口供发送网络请求、接收返回数据、存入数据库中。
   * MongoDB 数据库的安装，下载，配置
 
   
