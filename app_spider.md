@@ -30,7 +30,7 @@ APP 爬虫原理图
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   ```
 
-* 下载安装 Appium Server GUI (https://github.com/appium/appium-desktop) 和 Appium Inspector (https://github.com/appium/appium-inspector)， 启动 Appium Server GUI 时，编辑配置 ANDROID_HOME 和 JAVA_HOME，ANDROID_HOME上述已配置，拷贝下来，mac 已安装 Java 的查看安装路径，教程 https://blog.csdn.net/weixin_42566557/article/details/12437720   没安装 Java 的，自行安装(应在安装 Android Studio 前就先行安装 Java)
+* 下载安装 Appium Server GUI (https://github.com/appium/appium-desktop) 和 Appium Inspector (https://github.com/appium/appium-inspector)， 启动 Appium Server GUI 时，编辑配置 ANDROID_HOME 和 JAVA_HOME，ANDROID_HOME上述已配置，拷贝下来，mac 已安装 Java 的查看安装路径，教程 https://blog.csdn.net/we/.ixin_42566557/article/details/12437720   没安装 Java 的，自行安装(应在安装 Android Studio 前就先行安装 Java)
 
   ```bash
   cd /usr/libexec
@@ -105,17 +105,9 @@ APP 爬虫原理图
 
   ## 2. APP Demo 代码 
 
-  ### Appium Server GUI
+  Appium + Mitmproxy 爬取京东APP商品和评论，参考地址：https://github.com/Python3WebSpider/MitmAppiumJD
 
-  pass
-
-  ### Appium Inspector
-
-  pass
-
-  ### Mitmproxy
-
-  pass
+  
 
   ### 
 
