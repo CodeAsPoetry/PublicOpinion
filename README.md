@@ -119,7 +119,27 @@
 
 ### 4.6 建立服务部署
 
+* 技术栈：Docker + Flask + Uwsgi + Nginx + Pytorch
+* 注意项
+  * docker 启动时加以端口映射，配置随容器自启 Flask、Uwsgi、Nginx，建议直接拉取 Nginx 容器然后进行其他安装配置
+  * uwsgi 配置 lazy-apps = true
+  * nginx、uwsgi 配置较长的超时时间(默认配置会报 502 错误)，如 nginx 的 keepalive_timeout ，uwsgi 配置 http-timeout 或者 socket-timeout
+
 ### 4.7 建立工程应用平台
+
+* 技术栈
+  * 前端：Docker + React + Nginx
+  * 后端：Docker + Nginx + Tornado + Celery + Rabbitmq + Redis
+  * 数据库：MongoDB
+* 注意项
+  * 前后端分离，爬取、清洗、模型推理、数据分析可视化都以插件形式运行(甚至可以实现人工打标以及 docker 承载的模型训练)
+  * 前端：React (Ant Design Pro)，模板预览地址：https://preview.pro.ant.design/dashboard/analysis
+  * 后端：docker 启动时端口映射，配置随容器自启 Nginx、Tornado、Rabbitmq、Redis，建议直接拉取 Nginx 容器进行安装配置
+    * 尽管 Tornado 支持异步非阻塞，但仍建议 Celery + Rabbitmq + Redis，以便支持分布式爬虫和负载均衡，如果再进一步，类似 openPAI 的深度学习训练中台也可以支持。( 当然，OpenPAI ，是 k8s 负责容器调度 )
+    * Docker 容器安装 Rabbitmq ： https://www.cnblogs.com/yyxp/p/16049603.html
+    * Docker 容器内安装 redis ： https://www.jianshu.com/p/92395d6a4157
+  * 数据库
+    * mongodb，链接：https://codeaspoetry.github.io/2020/03/23/learn-mongodb/
 
 ## 5. 结项免责&使用说明
 
