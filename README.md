@@ -111,6 +111,33 @@
 
 * 数据处理脚本：data_processing/data_analysis.ipynb
 
+  ```python
+  weibo_comment_list = []
+  zhuan_zai_reg = re.compile(r'\//[\s]*@.*?[\:\：]{1}')
+  for item in weibo_path_list:
+      with open(item, 'r', encoding='utf-8') as f:
+          lines = f.readlines()
+          for line in tqdm(lines):
+              line = line.strip()
+              comment_list = re.split(zhuan_zai_reg, line)
+              if item == pos_file_path:
+                  sample = {
+                      'uid': str(uuid.uuid1()),
+                      'comment': ''.join(comment_list).lstrip().rstrip(),
+                      'line': line,
+                      'sentiment_label': 1
+                  }
+                  weibo_comment_list.append(sample)
+              else:
+                  sample = {
+                      'uid': str(uuid.uuid1()),
+                      'comment': ''.join(comment_list).lstrip().rstrip(),
+                      'line': line,
+                      'sentiment_label': 0
+                  }
+                  weibo_comment_list.append(sample)
+  ```
+
 * 得到数据集：data/weibo_train_v0_by_emoji.json
 
   ```json
